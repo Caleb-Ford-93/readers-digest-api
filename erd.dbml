@@ -1,0 +1,42 @@
+Table User {
+  id int pk
+  first_name text
+  last_name text
+  date_joined datetime
+}
+
+Table AuthToken {
+  token varchar
+  userId int [ref: - User.id]
+  date_created datetime
+}
+
+Table Category {
+  id int pk
+  name varchar
+}
+Table Book_Categories {
+  id int pk
+  category_id int [ref: > Category.id]
+  book_id int [ref: > Book.id]
+  created_at timestamp
+}
+
+Table Book {
+  id int pk
+  title varchar
+  author varchar
+  isbn_number char
+  cover_image_url varchar
+  auth_user varchar [ref: > User.id]
+  created_at datetime
+}
+
+Table Book_Review {
+  id int pk
+  book_id int [ref: > Book.id]
+  auth_user varchar [ref: > User.id]
+  rating int
+  comment text
+  posted_date datetime
+}
