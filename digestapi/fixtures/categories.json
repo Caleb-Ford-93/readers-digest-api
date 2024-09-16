@@ -1,0 +1,72 @@
+[
+  {
+    "model": "digestapi.Category",
+    "pk": 1,
+    "fields": {
+      "name": "Fiction"
+    }
+  },
+  {
+    "model": "digestapi.Category",
+    "pk": 2,
+    "fields": {
+      "name": "Non-Fiction"
+    }
+  },
+  {
+    "model": "digestapi.Category",
+    "pk": 3,
+    "fields": {
+      "name": "Mystery"
+    }
+  },
+  {
+    "model": "digestapi.Category",
+    "pk": 4,
+    "fields": {
+      "name": "Science Fiction"
+    }
+  },
+  {
+    "model": "digestapi.Category",
+    "pk": 5,
+    "fields": {
+      "name": "Fantasy"
+    }
+  },
+  {
+    "model": "digestapi.Category",
+    "pk": 6,
+    "fields": {
+      "name": "Biography"
+    }
+  },
+  {
+    "model": "digestapi.Category",
+    "pk": 7,
+    "fields": {
+      "name": "History"
+    }
+  },
+  {
+    "model": "digestapi.Category",
+    "pk": 8,
+    "fields": {
+      "name": "Self-Help"
+    }
+  },
+  {
+    "model": "digestapi.Category",
+    "pk": 9,
+    "fields": {
+      "name": "Romance"
+    }
+  },
+  {
+    "model": "digestapi.Category",
+    "pk": 10,
+    "fields": {
+      "name": "Thriller"
+    }
+  }
+]

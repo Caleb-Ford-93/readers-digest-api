@@ -15,7 +15,7 @@ class Book_Review(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="reviews_created"
     )
-    book_id = models.ForeignKey("Book", on_delete=models.CASCADE, related_name="Book")
+    book = models.ForeignKey("Book", on_delete=models.CASCADE, related_name="reviews")
     rating = models.IntegerField()
-    comment = models.CharField(max_length=400)
+    content = models.CharField(max_length=400)
     posted_date = models.DateField(auto_now_add=True)

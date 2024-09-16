@@ -9,8 +9,8 @@ from django.db import models
 
 
 class Book_Category(models.Model):
-    category_id = models.ForeignKey(
+    category = models.ForeignKey(
         "Category", on_delete=models.CASCADE, related_name="categories"
     )
-    book_id = models.ForeignKey("Book", on_delete=models.CASCADE, related_name="books")
+    book = models.ForeignKey("Book", on_delete=models.CASCADE, related_name="books")
     created_at = models.DateField(auto_now_add=True)

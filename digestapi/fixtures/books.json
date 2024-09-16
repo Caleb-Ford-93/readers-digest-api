@@ -1,0 +1,62 @@
+[
+  {
+    "model": "digestapi.book",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "isbn_number": "9780446310789",
+      "cover_image": "https://example.com/to_kill_a_mockingbird.jpg",
+      "created_at": "2024-09-13"
+    }
+  },
+  {
+    "model": "digestapi.book",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "title": "1984",
+      "author": "George Orwell",
+      "isbn_number": "9780451524935",
+      "cover_image": "https://example.com/1984.jpg",
+      "created_at": "2024-09-13"
+    }
+  },
+  {
+    "model": "digestapi.book",
+    "pk": 3,
+    "fields": {
+      "user": 1,
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "isbn_number": "9780743273565",
+      "cover_image": null,
+      "created_at": "2024-09-12"
+    }
+  },
+  {
+    "model": "digestapi.book",
+    "pk": 4,
+    "fields": {
+      "user": 3,
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "isbn_number": null,
+      "cover_image": "https://example.com/pride_and_prejudice.jpg",
+      "created_at": "2024-09-11"
+    }
+  },
+  {
+    "model": "digestapi.book",
+    "pk": 5,
+    "fields": {
+      "user": 2,
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "isbn_number": "9780547928227",
+      "cover_image": "https://example.com/the_hobbit.jpg",
+      "created_at": "2024-09-10"
+    }
+  }
+]
