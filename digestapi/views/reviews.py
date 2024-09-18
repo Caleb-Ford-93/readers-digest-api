@@ -1,13 +1,14 @@
 from rest_framework import viewsets, status, serializers, permissions
 from rest_framework.response import Response
-from digestapi.models import Book_Review, Book
+from digestapi.models import BookReview, Book
+from django.contrib.auth.models import User
 
 
 class ReviewSerializer(serializers.ModelSerializer):
     is_owner = serializers.SerializerMethodField()
 
     class Meta:
-        model = Book_Review
+        model = BookReview
         fields = [
             "id",
             "book_id",
@@ -29,7 +30,7 @@ class ReviewViewSet(viewsets.ViewSet):
 
     def list(self, request):
         # Get all reviews
-        reviews = Book_Review.objects.all()
+        reviews = BookReview.objects.all()
         # Serialize the objects, and pass request to determine owner
         serializer = ReviewSerializer(reviews, many=True, context={"request": request})
 
@@ -41,7 +42,7 @@ class ReviewViewSet(viewsets.ViewSet):
         # values from the request payload using `request.data`
         book = Book.objects.get(pk=request.data["book"])
 
-        review = Book_Review()
+        review = BookReview()
         review.user = request.user
         review.book = book
         review.rating = request.data["rating"]
@@ -61,19 +62,19 @@ class ReviewViewSet(viewsets.ViewSet):
     def retrieve(self, request, pk=None):
         try:
             # Get the requested review
-            review = Book_Review.objects.get(pk=pk)
+            review = BookReview.objects.get(pk=pk)
             # Serialize the object (make sure to pass the request as context)
             serializer = ReviewSerializer(review, context={"request": request})
             # Return the review with 200 status code
             return Response(serializer.data)
 
-        except Book_Review.DoesNotExist:
+        except BookReview.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
 
     def destroy(self, request, pk=None):
         try:
             # Get the requested review
-            review = Book_Review.objects.get(pk=pk)
+            review = BookReview.objects.get(pk=pk)
 
             # Check if the user has permission to delete
             # Will return 403 if authenticated user is not author
@@ -86,5 +87,5 @@ class ReviewViewSet(viewsets.ViewSet):
             # Return success but no body
             return Response(status=status.HTTP_204_NO_CONTENT)
 
-        except Book_Review.DoesNotExist:
+        except BookReview.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
